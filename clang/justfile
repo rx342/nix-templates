@@ -1,0 +1,7 @@
+[private]
+default:
+    @just --list --unsorted
+
+build main="main":
+    cmake .
+    make {{ main }}
