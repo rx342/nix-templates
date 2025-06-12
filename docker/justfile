@@ -1,0 +1,10 @@
+root_dir := justfile_directory()
+
+[private]
+default:
+    @just --list --unsorted
+
+build:
+    nix-build {{ root_dir }} -A docker.copyToDockerDaemon
+    {{ root_dir }}/result/bin/copy-to-docker-daemon
+    rm result
