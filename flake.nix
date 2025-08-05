@@ -7,19 +7,19 @@
       templates = {
         clang = {
           path = ./clang;
-          description = "Template for C++ using clang";
+          description = "C++ using clang";
         };
         cpp = {
           path = ./cpp;
-          description = "Template for C++";
+          description = "C++";
         };
         gpu = {
           path = ./gpu;
-          description = "Template to use GPU with CUDA";
+          description = "GPU with CUDA";
         };
         python = {
           path = ./python;
-          description = "Template for Python";
+          description = "Python";
         };
       };
     };
