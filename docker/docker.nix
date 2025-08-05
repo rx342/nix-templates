@@ -9,27 +9,25 @@
 nix2container.buildImage {
   name = "docker-image-name";
   tag = "0.1.0";
-  copyToRoot = buildEnv {
-    name = "root";
-    paths = [
-      coreutils
-      bashInteractive
-      dockerTools.usrBinEnv
-      dockerTools.binSh
-    ];
-    pathsToLink = [ "/bin" ];
-  };
-  config = {
-    Cmd = [ "${bashInteractive}/bin/bash" ];
-  };
-  layers = [
-    (nix2container.buildLayer {
-      deps = [
+  copyToRoot = [
+    (buildEnv {
+      name = "root-usr-bin-env";
+      paths = [
+        dockerTools.usrBinEnv
+      ];
+      pathsToLink = [ "/usr/bin" ];
+    })
+    (buildEnv {
+      name = "root-bin";
+      paths = [
         coreutils
         bashInteractive
-        dockerTools.usrBinEnv
         dockerTools.binSh
       ];
+      pathsToLink = [ "/bin" ];
     })
   ];
+  config = {
+    Cmd = [ "bash" ];
+  };
 }
