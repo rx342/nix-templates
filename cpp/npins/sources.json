@@ -4,8 +4,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.05pre762233.02032da4af07/nixexprs.tar.xz",
-      "hash": "0wx6vnq02n9c5x1df3dpzi1xk8aj5vvzzjhbb9dq04871hqs5wzs"
+      "hash": "sha256-+vOiMQwHEYBbWgvK//cuUqHZQ/y3DddCLyxZAbDdpnM="
     }
   },
-  "version": 3
+  "version": 7
 }
